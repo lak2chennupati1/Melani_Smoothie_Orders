@@ -23,7 +23,7 @@ if my_dataframe:
         #st.write('Status of submitted:', edited_dataset)
         #st.stop()
         try:
-          st.write('inside try ' , og_datasert)
+          st.write('inside try ' , og_dataset)
           #st.stop()
           og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
