@@ -20,8 +20,8 @@ if my_dataframe:
     if submitted:
         og_dataset = session.table("smoothies.public.orders")
         edited_dataset = session.create_dataframe(editable_df)
-        st.write('Status of submitted:', submitted)
-        st.stop()
+        #st.write('Status of submitted:', submitted)
+        #st.stop()
         try: 
             og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
@@ -29,6 +29,7 @@ if my_dataframe:
                     )
             st.success("Someone clicked the button.", icon='👍')
         except:
+            st.write('Submitted status: ', submitted)
             st.write('Something went wrong')
 else:
     st.success('There are no pending orders right now', icon='👍')
