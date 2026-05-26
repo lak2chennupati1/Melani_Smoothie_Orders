@@ -23,14 +23,12 @@ if my_dataframe:
         #st.write('Status of submitted:', edited_dataset)
         #st.stop()
         try:
-          st.write('inside try')
+          st.write('inside try ' , og_datasert)
           #st.stop()
           og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
                      , [when_matched().update({'ORDER_FILLED': edited_dataset['ORDER_FILLED']})]
                     )
-          st.write('Edited dataset ' , og.dataset)
-          st.stop()
           st.success("Someone clicked the button.", icon='👍')
         except:
             #st.write('Submitted status: ', submitted)
