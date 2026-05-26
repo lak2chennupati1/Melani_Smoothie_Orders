@@ -29,7 +29,7 @@ if my_dataframe:
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
                      , [when_matched().update({'ORDER_FILLED': edited_dataset['ORDER_FILLED']})]
                     )
-            st.success("Someone clicked the button.", icon='👍')
+          st.success("Someone clicked the button.", icon='👍')
         except:
             st.write('Submitted status: ', submitted)
             st.write('Something went wrong')
