@@ -29,9 +29,11 @@ if my_dataframe:
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
                      , [when_matched().update({'ORDER_FILLED': edited_dataset['ORDER_FILLED']})]
                     )
+          st.write('Edited dataset ' , og.dataset)
+          st.stop()
           st.success("Someone clicked the button.", icon='👍')
         except:
-            st.write('Submitted status: ', submitted)
+            #st.write('Submitted status: ', submitted)
             st.write('Something went wrong')
 else:
     st.success('There are no pending orders right now', icon='👍')
