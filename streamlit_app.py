@@ -7,9 +7,8 @@ st.title(':cup_with_straw: Pending Smoothie Orders :cup_with_straw:')
 st.write(
   """Orders that needs to be filled!
   """)
-cnx = st.connetion('snowflake')
+cnx = st.connection('snowflake')
 session = cnx.session()
-session = get_active_session()
 
 my_dataframe = session.table("smoothies.public.orders") \
     .filter(col("ORDER_FILLED") == 0) \
