@@ -20,10 +20,12 @@ if my_dataframe:
     if submitted:
         og_dataset = session.table("smoothies.public.orders")
         edited_dataset = session.create_dataframe(editable_df)
-        st.write('Status of submitted:', edited_dataset)
-        st.stop()
+        #st.write('Status of submitted:', edited_dataset)
+        #st.stop()
         try: 
-            og_dataset.merge(edited_dataset
+          st.write('inside try')
+          st.stop()
+          og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
                      , [when_matched().update({'ORDER_FILLED': edited_dataset['ORDER_FILLED']})]
                     )
