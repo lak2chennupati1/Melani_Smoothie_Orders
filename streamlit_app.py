@@ -22,7 +22,7 @@ if my_dataframe:
         edited_dataset = session.create_dataframe(editable_df)
         #st.write('Status of submitted:', edited_dataset)
         #st.stop()
-        try: 
+        try:
           st.write('inside try')
           #st.stop()
           og_dataset.merge(edited_dataset
