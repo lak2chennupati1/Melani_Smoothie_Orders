@@ -24,7 +24,7 @@ if my_dataframe:
         #st.stop()
         try: 
           st.write('inside try')
-          st.stop()
+          #st.stop()
           og_dataset.merge(edited_dataset
                      , (og_dataset['ORDER_UID'] == edited_dataset['ORDER_UID'])
                      , [when_matched().update({'ORDER_FILLED': edited_dataset['ORDER_FILLED']})]
